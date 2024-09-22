@@ -553,3 +553,28 @@ video {
 [hidden] {
   display: none;
 }
+
+.w-40 {
+  width: 10rem;
+}
+
+/* .w-\[\] { 
+  width: ;
+} */
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[500px\] {
+  width: 500px;
+}
+
+.w-\[700px\] {
+  width: 700px;
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
