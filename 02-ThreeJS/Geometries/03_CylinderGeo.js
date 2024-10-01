@@ -14,10 +14,10 @@ const camera = new Three.PerspectiveCamera(
 )
 
 //* geometry name and material
-const geometry = new Three.SphereGeometry(2, 5,19,180,6.28,0,Math.PI / 2);
+const geometry = new Three.CylinderGeometry(1 ,1, 1.2, 30);
 const material = new Three.MeshBasicMaterial({color: "#a64253", wireframe: true});
-const sphere = new Three.Mesh(geometry, material);
-scene.add(sphere);
+const cylinder = new Three.Mesh(geometry, material);
+scene.add(cylinder);
 camera.position.z = 5;
 
 //* rendrering for canvas
@@ -37,15 +37,17 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
 })
 
-sphere.rotateY(1.58)
+cylinder.rotateY(1.58)
+const clock = new Three.Clock();
 
-//* animation of sphere 
+//* animation of cylinder 
 const animate = () => {
     window.requestAnimationFrame(animate);
     renderer.render(scene, camera);
     control.update();
-    // sphere.rotation.x += 0.01;
-    // sphere.rotation.y += 0.01;    
+    // cylinder.rotation.x = clock.getElapsedTime();
+    // cylinder.rotation.y = clock.getElapsedTime();  
+    // cylinder.rotation.z = clock.getElapsedTime();    
 }
 
 //* call the function of animation
